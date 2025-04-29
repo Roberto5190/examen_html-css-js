@@ -1,0 +1,88 @@
+.task_form{
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    padding: 1rem 1.75rem;
+    border-radius: 1rem;
+    background-color: $primary_color;
+
+
+    .task_form_title_label{
+        display: flex;
+        flex-direction: column;
+        gap: .25rem;
+        font-weight: bold;
+        .task_form_title{
+            background-color: $color_white;
+            padding: .25rem .75rem;
+            border-radius: .25rem;
+
+            font-weight: normal;
+            color: $color_black_800;
+            &::placeholder{
+                color: $color_black_400;
+            }
+        }
+    }
+
+    .task_form_date_label{
+        display: flex;
+        flex-direction: column;
+        gap: .25rem;
+        font-weight: bold;
+        .task_form_date{
+            background-color: $color_white;
+            padding: .25rem .75rem;
+            border-radius: .25rem;
+            font-weight: normal;
+            color: $color_black_800;
+
+        }
+    }
+
+    .task_form_prior_label{
+        display: flex;
+        flex-direction: column;
+        gap: .25rem;
+        font-weight: bold;
+        .task_form_prior{
+            background-color: $color_white;
+            padding: .25rem .75rem;
+            border-radius: .25rem;
+
+            font-weight: normal;
+            color: $color_black_400;
+        }
+    }
+
+    .add_task_button{
+        cursor: pointer;
+        font-size: medium;
+        font-weight: bold;
+        text-align: center;
+        color: $color_white;
+        background-color: black;
+        padding: .25rem .75rem;
+        border-radius: .75rem;
+
+        &.hidden{
+            display: none;
+        }
+    }
+
+
+    .cancel_button{
+        display: flex;
+        cursor: pointer;
+        font-size: medium;
+        font-weight: bold;
+        text-align: center;
+        color: $color_black;
+        border: 1px solid $color_black;
+        padding: .25rem .75rem;
+        border-radius: .75rem;
+        &.hidden{
+            display: none;
+        }
+    }
+}

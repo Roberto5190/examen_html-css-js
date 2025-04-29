@@ -1,0 +1,48 @@
+@import "./lib/reset";
+@import "./lib/vars";
+@import "./partials/header";
+@import "./partials/form";
+@import "./partials/tasksSection";
+
+
+:root {
+    font-family: Arial, Helvetica, sans-serif;
+    
+}
+
+body{
+    width: 100dvw;
+    height: 100dvh;
+    background-color: $secondary_color_light;
+}
+body{
+    &.dark{
+        background-color: $secondary_color_dark;
+
+        header{
+            color: $color_white;
+            background-color: $color_black_800;
+            .header_logo{
+                background-color: $color_white;
+            }
+        }
+        .task_list{
+            color: white;
+            .task_list_container{
+                
+                .task_card{
+                    background-color: $color_black_800;
+                    color: $color_white;
+                }
+            }
+        }
+
+    }
+}
+.app{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+}

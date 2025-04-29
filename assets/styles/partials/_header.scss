@@ -1,0 +1,59 @@
+header {
+    width: 100%;
+    max-width: 1024px;
+    padding: .5rem 1rem;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background-color: #fff;
+    border-bottom: 1px solid black;
+    .header_left{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: .5rem;
+        .header_logo{
+            width: 100px;
+            border-radius: .25rem;
+            img{
+                width: 100%;
+                object-fit: contain;
+            }
+        }
+
+        .header_title{
+            h1{
+                font-size: medium;
+                font-weight: bold;
+            }
+        }
+    }
+
+
+
+    .header_right{
+
+        .sun_icon{
+            cursor: pointer;
+            svg {
+
+            }
+
+            &.hidden{
+                display: none;
+            }
+        }
+
+        .moon_icon{
+            cursor: pointer;
+            svg{
+
+            }
+            &.hidden{
+                display: none;
+            }
+        }
+    }
+}

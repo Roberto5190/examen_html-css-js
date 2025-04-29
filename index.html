@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/styles/styles.css" />
+    <title>Examen HTML, CSS y JS</title>
+</head>
+
+<body>
+    <div class="app">
+        <header>
+            <div class="header_left">
+                <div class="header_logo">
+                    <img src="./assets/img/logo-tajamar.png" alt="logo tajamar" />
+                </div>
+                <div class="header_title">
+                    <h1>Gestor de tareas</h1>
+                </div>
+            </div>
+
+            <div class="header_right">
+                <div class="sun_icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                        <path fill="currentColor"
+                            d="M3.22 7.22A9.98 9.98 0 0 1 12 2c3.79 0 7.09 2.11 8.78 5.22L20 8H4zM21.4 8.6c.38 1.07.6 2.21.6 3.4a10 10 0 0 1-10 10A10 10 0 0 1 2 12c0-1.19.22-2.33.6-3.4L4 10h1c0 1.38 2.12 2.5 3.5 2.5s2.75-1.12 2.75-2.5h1.5c0 1.38 1.37 2.5 2.75 2.5S19 11.38 19 10h1zm-5.21 6.82L14.77 14c-.45.72-1.52 1.23-2.77 1.23S9.68 14.72 9.23 14l-1.42 1.42c.9 1.08 2.44 1.81 4.19 1.81s3.29-.73 4.19-1.81" />
+                    </svg>
+                </div>
+                <div class="moon_icon hidden">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                        <path fill="currentColor" d="M2 12a10 10 0 0 0 13 9.54a10 10 0 0 1 0-19.08A10 10 0 0 0 2 12" />
+                    </svg>
+                </div>
+            </div>
+        </header>
+
+        <!-- TASKS FORM -->
+        <form class="task_form">
+            <label class="task_form_title_label">
+                Título
+                <input type="text" class="task_form_title" placeholder="Título de la tarea" required />
+            </label>
+
+            <label class="task_form_date_label">
+                Fecha límite
+                <input type="date" class="task_form_date" required />
+            </label>
+
+            <label class="task_form_prior_label">
+                Prioridad
+                <select class="task_form_prior" required>
+                    <option value="Alta">Alta</option>
+                    <option value="Media">Media</option>
+                    <option value="Baja">Baja</option>
+                </select>
+            </label>
+
+            <p id="mensaje_error"></p>
+            <button type="submit" class="add_task_button">AGREGAR TAREA</button>
+
+            <!-- Botones de confirmación para la edición -->
+            <button type="button" class="cancel_button hidden">Cancelar</button>
+        </form>
+
+        <!-- TASKS LIST -->
+        <section class="task_list">
+            <h2>Lista de tareas</h2>
+
+            <div class="filter_priority_tasks">
+                <h4>Filtrar por prioridad</h4>
+                <select class="filter_tasks">
+                    <option value="Alta">Alta</option>
+                    <option value="Media">Media</option>
+                    <option value="Baja">Baja</option>
+                </select>
+            </div>
+ 
+            <div class="task_list_container"></div>
+        </section>
+    </div>
+    <!-- /app -->
+
+    <script type="module" src="./app/script.js"></script>
+</body>
+
+</html>

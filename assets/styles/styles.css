@@ -1,0 +1,304 @@
+*:where(:not(html, iframe, canvas, img, svg, video, select, :checked):not(svg *, symbol *)) {
+  all: unset;
+  display: revert;
+}
+
+input[type=checkbox] {
+  all: revert;
+}
+
+/* Preferred box-sizing value */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Reapply the pointer cursor for anchor tags */
+a, button {
+  cursor: revert;
+}
+
+/* Remove list styles (bullets/numbers) */
+ol, ul, menu {
+  list-style: none;
+}
+
+/* For images to not be able to exceed their container */
+img {
+  max-width: 100%;
+}
+
+/* removes spacing between cells in tables */
+table {
+  border-collapse: collapse;
+}
+
+/* revert the 'white-space' property for textarea elements on Safari */
+textarea {
+  white-space: revert;
+}
+
+/* minimum style to allow to style meter element */
+meter {
+  -webkit-appearance: revert;
+  -moz-appearance: revert;
+       appearance: revert;
+}
+
+/* reset default text opacity of input placeholder */
+::-moz-placeholder {
+  color: unset;
+}
+::placeholder {
+  color: unset;
+}
+
+/* fix the feature of 'hidden' attribute.
+ display:revert; revert to element instead of attribute */
+:where([hidden]) {
+  display: none;
+}
+
+/* revert for bug in Chromium browsers
+ - fix for the content editable attribute will work properly. */
+:where([contenteditable]) {
+  -moz-user-modify: read-write;
+  -webkit-user-modify: read-write;
+  overflow-wrap: break-word;
+  -webkit-line-break: after-white-space;
+}
+
+/* apply back the draggable feature - exist only in Chromium and Safari */
+:where([draggable=true]) {
+  -webkit-user-drag: element;
+}
+
+header {
+  width: 100%;
+  max-width: 1024px;
+  padding: 0.5rem 1rem;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  border-bottom: 1px solid black;
+}
+header .header_left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+header .header_left .header_logo {
+  width: 100px;
+  border-radius: 0.25rem;
+}
+header .header_left .header_logo img {
+  width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+header .header_left .header_title h1 {
+  font-size: medium;
+  font-weight: bold;
+}
+header .header_right .sun_icon {
+  cursor: pointer;
+}
+header .header_right .sun_icon.hidden {
+  display: none;
+}
+header .header_right .moon_icon {
+  cursor: pointer;
+}
+header .header_right .moon_icon.hidden {
+  display: none;
+}
+
+.task_form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  padding: 1rem 1.75rem;
+  border-radius: 1rem;
+  background-color: #ff6700;
+}
+.task_form .task_form_title_label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  font-weight: bold;
+}
+.task_form .task_form_title_label .task_form_title {
+  background-color: #F0F0EC;
+  padding: 0.25rem 0.75rem;
+  border-radius: 0.25rem;
+  font-weight: normal;
+  color: #151515;
+}
+.task_form .task_form_title_label .task_form_title::-moz-placeholder {
+  color: #5d5d5d;
+}
+.task_form .task_form_title_label .task_form_title::placeholder {
+  color: #5d5d5d;
+}
+.task_form .task_form_date_label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  font-weight: bold;
+}
+.task_form .task_form_date_label .task_form_date {
+  background-color: #F0F0EC;
+  padding: 0.25rem 0.75rem;
+  border-radius: 0.25rem;
+  font-weight: normal;
+  color: #151515;
+}
+.task_form .task_form_prior_label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  font-weight: bold;
+}
+.task_form .task_form_prior_label .task_form_prior {
+  background-color: #F0F0EC;
+  padding: 0.25rem 0.75rem;
+  border-radius: 0.25rem;
+  font-weight: normal;
+  color: #5d5d5d;
+}
+.task_form .add_task_button {
+  cursor: pointer;
+  font-size: medium;
+  font-weight: bold;
+  text-align: center;
+  color: #F0F0EC;
+  background-color: black;
+  padding: 0.25rem 0.75rem;
+  border-radius: 0.75rem;
+}
+.task_form .add_task_button.hidden {
+  display: none;
+}
+.task_form .cancel_button {
+  display: flex;
+  cursor: pointer;
+  font-size: medium;
+  font-weight: bold;
+  text-align: center;
+  color: #0d0d0d;
+  border: 1px solid #0d0d0d;
+  padding: 0.25rem 0.75rem;
+  border-radius: 0.75rem;
+}
+.task_form .cancel_button.hidden {
+  display: none;
+}
+
+.task_list {
+  width: 100%;
+  max-width: 1024px;
+  padding: 1.5rem;
+}
+.task_list h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #0d0d0d;
+  margin-bottom: 1rem;
+}
+.task_list .filter_tasks {
+  margin-top: 0.5rem;
+  margin-bottom: 0.75rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  background-color: #F0F0EC;
+}
+.task_list .task_list_container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+.task_list .task_list_container .task_card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  background-color: #F0F0EC;
+  padding: 1rem 2rem;
+  border-radius: 1rem;
+  box-shadow: 2px 2px 10px 1px rgba(0, 0, 0, 0.2);
+}
+.task_list .task_list_container .task_card:active {
+  opacity: 0.25;
+}
+.task_list .task_list_container .task_card .title {
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+.task_list .task_list_container .task_card .limit_date {
+  font-size: 0.75rem;
+  color: #5d5d5d;
+}
+.task_list .task_list_container .task_card .task_buttons {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+.task_list .task_list_container .task_card .task_buttons .delete_button {
+  font-weight: bold;
+  font-size: 0.75rem;
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.75rem;
+  color: rgb(160, 3, 3);
+  background-color: rgb(255, 156, 156);
+}
+.task_list .task_list_container .task_card .task_buttons .edit_button {
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 0.75rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.75rem;
+  color: rgb(3, 3, 155);
+  background-color: rgb(176, 176, 255);
+}
+
+:root {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  width: 100dvw;
+  height: 100dvh;
+  background-color: #3a6ea5;
+}
+
+body.dark {
+  background-color: #004e98;
+}
+body.dark header {
+  color: #F0F0EC;
+  background-color: #151515;
+}
+body.dark header .header_logo {
+  background-color: #F0F0EC;
+}
+body.dark .task_list {
+  color: white;
+}
+body.dark .task_list .task_list_container .task_card {
+  background-color: #151515;
+  color: #F0F0EC;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}/*# sourceMappingURL=styles.css.map */
